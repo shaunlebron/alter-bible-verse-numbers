@@ -1,3 +1,6 @@
+
+// Given a standard verse number, return the corresponding verse number in Alter’s Hebrew Bible.
+// (A returned array represents a combination of verses)
 function stdToAlter(id) {
   let [ch,n] = id.split(':')
   n = parseInt(n,10)
@@ -253,4 +256,64 @@ function stdToAlter(id) {
   }
   if (ch == 'Mal 4') return `Mal 3:${n+18}`
   return undefined
+}
+
+// Determine how to split Alter verses.
+// `verses` is a map from verse id to verse text
+// (NOTE: this data cannot be legally published)
+function splitVerses(verses) {
+  function splitAt(str,sep) {
+    const toks = str.split(sep)
+    for (let i=0; i<toks.length-1; i++) toks[i] += sep
+    return toks.map(t => t.trim())
+  }
+  function splitVerse(id, sep, _sids) {
+    const toks = splitAt(verses[id], sep)
+    let sids = _sids
+    if (typeof sids == 'number') {
+      sids = []
+      for (let i=0; i<_sids; i++) {
+        sids.push(id + ['a','b','c','d'][i])
+      }
+    }
+    for (let i=0; i<sids.length; i++) {
+      const sid = sids[i]
+      const tok = toks[i]
+      verses[sid] = tok
+    }
+  }
+  splitVerse('Ge 47:5a-6b', '.”', [
+    'Ge 47:5a',
+    'Ge 47:6b',
+  ])
+  splitVerse('De 5:17', '.', 4)
+  splitVerse('Jg 12:14', '.', 3)
+  splitVerse('2Ch 2:1', '.', 2)
+  function splitPsalmSuper(sep, chs) {
+    for (const i of chs) {
+      splitVerse(`Ps ${i}:1`, sep, 2)
+    }
+  }
+  splitPsalmSuper('.', [15,16,23,24,72,73,74,87,90,100,109,120,121,123,124,125,126,128,129,130,132,133,134,138,139,144,145])
+  splitPsalmSuper('_.', [32,78])
+  splitPsalmSuper('David.', [11,14,25,26,27,28,35,37,103,122,131])
+  splitPsalmSuper('psalm.', [29,50,66,79,82,98,101,110,141,143])
+  splitPsalmSuper('Solomon.', [127])
+  splitPsalmSuper('David prayer.', [17,86])
+  splitVerse('Ps 13:6', '.', 2)
+  splitVerse('Ps 18:2', ':', 2)
+  splitVerse('Pr 12:8', 'despised.', 2)
+  splitVerse('Ca 3:9', 'wood.', 2)
+  splitVerse('Isa 41:28', 'answer.', 2)
+  splitVerse('Isa 48:21', 'for them.', 2)
+  splitVerse('Isa 63:19', 'called.', 2)
+  splitVerse('Jer 3:22', 'God.', 2)
+  splitVerse('Jer 30:23', 'wicked,', 2)
+  splitVerse('Jer 36:27', 'saying,', 2)
+  splitVerse('Eze 21:25', 'Judah.', 2)
+  splitVerse('Am 8:9', 'light.', 2)
+  splitVerse('Zep 3:16', 'slack.', 2)
+  splitVerse('Zec 6:14', 'Zephaniah.', 2)
+  splitVerse('Zec 8:7', 'sunset,', 2)
+  splitVerse('Zec 8:19', 'come,', 2)
 }
