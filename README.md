@@ -22,6 +22,12 @@ numbers, making it difficult at times to compare across translations.
     * see `splitVerses` for how verses are split
 * [`books.json`](books.json): standard books/chapters/verses of the Bible used by `code.js`
 
+If you wish to generate the map yourself, install [Node](https://nodejs.org/en/) and run:
+
+```
+node code.js
+```
+
 ## Method
 
 I checked the size of each chapter in the Alter Bible, and accounted for each
