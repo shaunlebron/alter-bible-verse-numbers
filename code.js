@@ -2,19 +2,46 @@ const fs = require('fs')
 
 // Main (read books, map ids, write map)
 function main() {
+  const totals = {
+    same: 0,
+    one: 0,
+    many: 0,
+    empty: 0,
+    all: 0,
+  }
   const map = {}
   const books = JSON.parse(fs.readFileSync('./books.json', 'utf8'))
-  for (const [book,{code,chapters}] of Object.entries(books))
-    for (const [ch,[a,b]] of Object.entries(chapters))
+  for (const [book,{code,chapters}] of Object.entries(books)) {
+    if (book.id == 40) break // ignore new testament
+    for (const [ch,[a,b]] of Object.entries(chapters)) {
       for (let i=a; i<=b; i++) {
         const id = `${code} ${ch}:${i}`
         const id2 = stdToAlter(id)
-        if (id2 === undefined) continue
+        totals.all++
+        if (id2 === undefined) {
+          totals.same++
+          continue
+        }
+        else if (id2 === null) totals.empty++
+        else if (typeof id2 == 'string') totals.one++
+        else if (Array.isArray(id2)) totals.many++
         map[id] = id2
       }
+    }
+  }
+  printTotals(totals)
   fs.writeFileSync('./map.json', JSON.stringify(map,null,2))
 }
 main()
+
+function printTotals(totals) {
+  const {same,one,many,empty,all} = totals
+  const diff = all-same
+  console.log('standard verses total:', all)
+  console.log('standard verses mapped:', diff, `(${(diff/all*100).toFixed(2)}%)`)
+  console.log()
+  console.log({totals})
+}
 
 // Given a standard verse number, return the corresponding verse number in Alter’s Hebrew Bible.
 // (A returned array represents a combination of verses)
