@@ -1,4 +1,4 @@
-# Bible Alter Map
+# Alter Bible verse numbers
 
 Standard verse numbers for [Robert Alter’s Hebrew Bible][1]
 
@@ -9,7 +9,9 @@ numbers, making it difficult at times to compare across translations.
 * **How many**: 2,296 verse numbers out of 31,218 are changed. (7.35%)
 * **Who this is for**: publishers, researchers, or students wanting a canonical mapping between Standard and Alter verses.
 
-<img src="alter.jpg">
+> <img src="alter.jpg" alt="Detail of Ayin Samekh Nun from The Creation, ca. 1978-1980, a series of ten tapestries designed by Mordecai Ardon (1896-1922)">
+>
+> Cover Art for Volume 3: *The Creation by Mordecai Adon, 1980*
 
 ## Files
 
