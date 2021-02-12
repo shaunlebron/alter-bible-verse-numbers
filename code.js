@@ -1,3 +1,20 @@
+const fs = require('fs')
+
+// Main (read books, map ids, write map)
+function main() {
+  const map = {}
+  const books = JSON.parse(fs.readFileSync('./books.json', 'utf8'))
+  for (const [book,{code,chapters}] of Object.entries(books))
+    for (const [ch,[a,b]] of Object.entries(chapters))
+      for (let i=a; i<=b; i++) {
+        const id = `${code} ${ch}:${i}`
+        const id2 = stdToAlter(id)
+        if (id2 === undefined) continue
+        map[id] = id2
+      }
+  fs.writeFileSync('./map.json', JSON.stringify(map,null,2))
+}
+main()
 
 // Given a standard verse number, return the corresponding verse number in Alter’s Hebrew Bible.
 // (A returned array represents a combination of verses)
@@ -258,9 +275,11 @@ function stdToAlter(id) {
   return undefined
 }
 
+
+
+// NOTE: this relies on data which cannot be legally published
 // Determine how to split Alter verses.
 // `verses` is a map from verse id to verse text
-// (NOTE: this data cannot be legally published)
 function splitVerses(verses) {
   function splitAt(str,sep) {
     const toks = str.split(sep)
