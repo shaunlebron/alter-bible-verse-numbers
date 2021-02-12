@@ -18,8 +18,8 @@ numbers, making it difficult at times to compare across translations.
     * **empty**: if verse maps to `null`, then Alter provided no respective verse
     * **split**: if verse maps to `[...]`, then Alter separated it into multiple verses
 * [`code.js`](code.js): code that creates `map.json`
-    * check `stdToAlter` for accounting how verses are mapped
-    * check `splitVerses` for accounting how verses are split
+    * see `stdToAlter` for how verses are mapped
+    * see `splitVerses` for how verses are split
 * [`books.json`](books.json): standard books/chapters/verses of the Bible used by `code.js`
 
 ## Method
