@@ -10,7 +10,7 @@ This is a lookup table for each Standard verse number that appears differently i
 
 > <a href="https://soussanart.com/product/mourlot-nun-samekh-ayin"><img src="alter.jpg" alt="Detail of Ayin Samekh Nun from The Creation, ca. 1978-1980, a series of ten tapestries designed by Mordecai Ardon (1896-1992)"></a>
 >
-> Cover Art for Volume 3: *[Ayin Amekh Nun] from [The Creation], ca. 1978–1980, a series of ten tapestries by [Mordecai Adon] (1896–1992)*
+> Cover Art for Volume 3: *[Ayin Amekh Nun] from [The Creation], ca. 1978–1980,<br>a series of ten tapestries by [Mordecai Adon] (1896–1992)*
 
 [Hebrew Bible]:https://wwnorton.com/books/9780393292497
 [Robert Alter]:https://en.wikipedia.org/wiki/Robert_Alter
