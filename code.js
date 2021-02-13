@@ -12,7 +12,8 @@ function main() {
   const map = {}
   const books = JSON.parse(fs.readFileSync('./books.json', 'utf8'))
   for (const [book,{code,chapters}] of Object.entries(books)) {
-    if (book.id == 40) break // ignore new testament
+    console.log(book)
+    if (book == 40) break // ignore new testament
     for (const [ch,[a,b]] of Object.entries(chapters)) {
       for (let i=a; i<=b; i++) {
         const id = `${code} ${ch}:${i}`

@@ -8,7 +8,7 @@ numbers have changed:
 **[Download the Standard→Alter Table](map.json)** (JSON format)
 * Standard on the left, Alter on the right.
 * Includes only the *changed* verse numbers:
-  * 2,296 out of 31,218 verses (7.35%) were renumbered
+  * 2,296 out of 23,261 verses (9.87%) were renumbered
 
 > <a href="https://soussanart.com/product/mourlot-nun-samekh-ayin"><img src="alter.jpg" alt="Detail of Ayin Samekh Nun from The Creation, ca. 1978-1980, a series of ten tapestries designed by Mordecai Ardon (1896-1992)"></a>
 >
