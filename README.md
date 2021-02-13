@@ -1,18 +1,29 @@
 # Alter Bible verse numbers
 
-Standard verse numbers for the [Hebrew Bible] translated by [Robert Alter].
+Standard verse numbers are certainly useful when comparing translations of the
+Hebrew Bible.  [Robert Alter’s translation][Alter Bible] renumbers some
+of them—presumably for better literary indication. So here we map out which
+numbers have changed:
 
-This is a lookup table for each Standard verse number that appears differently in Alter’s.
-
-* **Why**: Robert Alter uses some non-canonical verse numbers, making it difficult at times to compare across translations.
-* **How many**: 2,296 verse numbers out of 31,218 are changed. (7.35%)
-* **Who this is for**: publishers, researchers, or students wanting a canonical mapping between Standard and Alter verses.
+**[Download the Standard→Alter Table](map.json)** (JSON format)
+* Standard on the left, Alter on the right.
+* Includes only the *changed* verse numbers:
+  * 2,296 out of 31,218 (7.35%) were renumbered
 
 > <a href="https://soussanart.com/product/mourlot-nun-samekh-ayin"><img src="alter.jpg" alt="Detail of Ayin Samekh Nun from The Creation, ca. 1978-1980, a series of ten tapestries designed by Mordecai Ardon (1896-1992)"></a>
 >
 > Cover Art for Volume 3: *[Ayin Amekh Nun] from [The Creation], ca. 1978–1980,<br>a series of ten tapestries by [Mordecai Adon] (1896–1992)*
 
-[Hebrew Bible]:https://wwnorton.com/books/9780393292497
+## Legal and Future Use
+
+Anyone may use this (e.g. for verse-collation efforts).  I used them to collate
+Alter’s verses with other translations, but I cannot legally publish the verse text here.
+I can only publish the verse map, which may potentially be:
+
+- used by vendors like Bible Gateway, Bible Hub, or YouVersion should they license Alter’s translation and need a means to import it
+- used by Alter’s editor should they want to export standardized verses to simplify vendor import
+
+[Alter Bible]:https://wwnorton.com/books/9780393292497
 [Robert Alter]:https://en.wikipedia.org/wiki/Robert_Alter
 [Ayin Amekh Nun]:https://soussanart.com/product/mourlot-nun-samekh-ayin/
 [The Creation]:https://soussanart.com/product-category/artists/mordecai-ardon/
@@ -45,5 +56,4 @@ size difference, mainly:
 * when Alter reordered verses
 * when Alter treated Psalm superscriptions as verse one
 
-I used this to collate Alter’s verses with other translations, which I cannot legally publish here.
 
