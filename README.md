@@ -18,10 +18,10 @@ numbers have changed:
 
 Anyone may use this (e.g. for verse-collation efforts).  I used them to collate
 Alter’s verses with other translations, but I cannot legally publish the verse text here.
-I can only publish the verse map, which may potentially be:
+I can only publish the verse map, which:
 
-- used by vendors like Bible Gateway, Bible Hub, or YouVersion should they license Alter’s translation and need a means to import it
-- used by Alter’s editor should they want to export standardized verses to simplify vendor import
+- can be used by vendors like Bible Gateway, Bible Hub, or YouVersion should they license Alter’s translation and need a means to import it
+- can be used by Alter’s editor should they want to export standardized verses to simplify vendor import
 
 [Alter Bible]:https://wwnorton.com/books/9780393292497
 [Robert Alter]:https://en.wikipedia.org/wiki/Robert_Alter
